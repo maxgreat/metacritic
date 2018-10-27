@@ -40,7 +40,7 @@ def findCritic(title):
 		genre = genre.replace(',', ', ')
 	except Exception as e:
 		genre = 'NaN'
-	return title, critics, users, genre
+	return critics, users, genre
 
 
 
