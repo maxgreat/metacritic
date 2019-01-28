@@ -3,7 +3,6 @@ import urllib.parse
 from urllib.request import Request, urlopen
 from bs4 import BeautifulSoup
 import re
-import googlesearch3
 from googlesearch import search
 
 
@@ -32,7 +31,7 @@ def findCritic(title):
 		users = users.text
 	except Exception as e:
 		users = 'NaN'
-	
+
 	try:
 		genre = soup.find('li', {'class':'product_genre'})
 		genre = genre.text.replace('Genre(s):', '')
@@ -53,8 +52,8 @@ def criticGames(fileName='Games.tsv', test=False):
 		if test:
 			print(findCritic(lines[0].split('\t')[0]))
 			return
-		
-		for line in lines:	
+
+		for line in lines:
 			title = line.split('\t')[0]
 			print(findCritic(title))
 
